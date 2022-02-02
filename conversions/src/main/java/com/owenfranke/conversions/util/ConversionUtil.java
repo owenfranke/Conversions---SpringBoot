@@ -1,7 +1,6 @@
-package com.owenfranke.conversions.service;
+package com.owenfranke.conversions.util;
 
-public interface Conversion {
-
+public interface ConversionUtil {
     // Temperature:
     public String celsius(double input);
 
@@ -17,8 +16,8 @@ public interface Conversion {
     public String mile(double input);
 
     public String kilometre(double input);
-    public String metre(double input);
 
+    public String metre(double input);
 
     // Volumes:
     public String fluidOunce(double input);
@@ -58,5 +57,4 @@ public interface Conversion {
     public String squareMetre(double input);
 
     public String squareKilometre(double input);
-
 }
