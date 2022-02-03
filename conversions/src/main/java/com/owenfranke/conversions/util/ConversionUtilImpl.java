@@ -32,7 +32,7 @@ public class ConversionUtilImpl implements ConversionUtil {
         double cm = inch * 2.54;
         double metre = inch / 39.37;
         double kilometre = inch / 39370;
-        ;
+        
         return "Metric:\nCentimetre: " + Precision.round(cm, 2) + "\nMetre: " + Precision.round(metre, 2)
                 + "\nkilometre: " + Precision.round(kilometre, 2);
     }
