@@ -1,3 +1,6 @@
+//Owen Franke
+//Implementation of Utility Layer
+
 package com.owenfranke.conversions.util;
 
 import org.apache.commons.math3.util.Precision;
