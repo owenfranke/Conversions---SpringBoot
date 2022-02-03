@@ -1,3 +1,6 @@
+//Owen Franke
+//Abstract Utility Layer
+
 package com.owenfranke.conversions.util;
 
 public interface ConversionUtil {
