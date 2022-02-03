@@ -10,7 +10,7 @@ The application uses:
 * Maven
 * Postman (for testing) - you can import the json file included
 
-### To use the application:
+### To use the Docker Environment:
 #### `Compile new .jar (if required)`
 'mvn install'
 
