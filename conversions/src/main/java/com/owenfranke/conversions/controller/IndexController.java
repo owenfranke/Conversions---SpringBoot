@@ -55,7 +55,6 @@ public class IndexController {
     }
 
     // Area:
-
     @RequestMapping("area/squarefoot/{input}")
     public String fromSF(@PathVariable(value = "input") double input) {
         return conversion.squareFoot(input);
@@ -81,7 +80,7 @@ public class IndexController {
         return conversion.squareMetre(input);
     }
 
-    @RequestMapping("area/sqaureKilometer/{input}")
+    @RequestMapping("area/squarekilometre/{input}")
     public String fromSquareKilometer(@PathVariable(value = "input") double input) {
         return conversion.squareKilometre(input);
     }
