@@ -1,5 +1,6 @@
 package com.owenfranke.conversions.util;
 
+import org.apache.commons.math3.util.Precision;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -15,14 +16,14 @@ public class ConversionUtilImpl implements ConversionUtil {
 
         double far = (cel * 1.8) + 32;
         far = Math.round(far * 100) / 100;
-        return "In Farenheit: " + far;
+        return "In Farenheit: " + Precision.round(far, 2);
     }
 
     @Override
     public String farenheit(double far) {
         double cel = (far - 32) / 1.8;
         cel = Math.round(cel * 100) / 100;
-        return "In Celsius: " + cel;
+        return "In Celsius: " + Precision.round(cel, 2);
     }
 
     // Length:
@@ -32,7 +33,8 @@ public class ConversionUtilImpl implements ConversionUtil {
         double metre = inch / 39.37;
         double kilometre = inch / 39370;
         ;
-        return "Metric:\nCentimetre: " + cm + "\nMetre: " + metre + "\nkilometre: " + kilometre;
+        return "Metric:\nCentimetre: " + Precision.round(cm, 2) + "\nMetre: " + Precision.round(metre, 2)
+                + "\nkilometre: " + Precision.round(kilometre, 2);
     }
 
     @Override
@@ -40,7 +42,8 @@ public class ConversionUtilImpl implements ConversionUtil {
         double cm = foot * 30.48;
         double metre = foot / 3.281;
         double kilometre = foot / 3281;
-        return "Metric:\nCentimetre: " + cm + "\nMetre: " + metre + "\nkilometre: " + kilometre;
+        return "Metric:\nCentimetre: " + Precision.round(cm, 2) + "\nMetre: " + Precision.round(metre, 2)
+                + "\nkilometre: " + Precision.round(kilometre, 2);
     }
 
     @Override
@@ -48,7 +51,8 @@ public class ConversionUtilImpl implements ConversionUtil {
         double cm = mile * 160934.4;
         double metre = mile * 1609.34;
         double kilometre = mile * 1.609;
-        return "Metric:\nCentimetre: " + cm + "\nMetre: " + metre + "\nkilometre: " + kilometre;
+        return "Metric:\nCentimetre: " + Precision.round(cm, 2) + "\nMetre: "
+                + Precision.round(metre, 2) + "\nkilometre: " + Precision.round(kilometre, 2);
     }
 
     @Override
@@ -58,7 +62,8 @@ public class ConversionUtilImpl implements ConversionUtil {
         double foot = cm / 30.48;
         double mile = cm / 160934;
 
-        return "Imperial:\nInches: " + inch + "\nFeet: " + foot + "\nMiles: " + mile;
+        return "Imperial:\nInches: " + Precision.round(inch, 2) + "\nFeet: "
+                + Precision.round(foot, 2) + "\nMiles: " + Precision.round(mile, 2);
     }
 
     @Override
@@ -66,7 +71,8 @@ public class ConversionUtilImpl implements ConversionUtil {
         double inch = km * 39370;
         double foot = km * 3281;
         double mile = km / 1.609;
-        return "Imperial:\nInches: " + inch + "\nFeet: " + foot + "\nMiles: " + mile;
+        return "Imperial:\nInches: " + Precision.round(inch, 2) + "\nFeet: "
+                + Precision.round(foot, 2) + "\nMiles: " + Precision.round(mile, 2);
     }
 
     @Override
@@ -74,7 +80,8 @@ public class ConversionUtilImpl implements ConversionUtil {
         double inch = metre * 39.37;
         double foot = metre * 3.281;
         double mile = (metre / 1.609) / 1000;
-        return "Imperial:\nInches: " + inch + "\nFeet: " + foot + "\nMiles: " + mile;
+        return "Imperial:\nInches: " + Precision.round(inch, 2) + "\nFeet: "
+                + Precision.round(foot, 2) + "\nMiles: " + Precision.round(mile, 2);
     }
 
     // Volume:
@@ -83,7 +90,8 @@ public class ConversionUtilImpl implements ConversionUtil {
         double ml = ounce * 29.5735;
         double l = ml / 1000;
         double kl = l / 1000;
-        return "Metric:\nMililiters: " + ml + "\nLitres: " + l + "\nKilolitres: " + kl;
+        return "Metric:\nMililiters: " + Precision.round(ml, 2) +
+                "\nLitres: " + Precision.round(l, 2) + "\nKilolitres: " + Precision.round(kl, 2);
 
     }
 
@@ -92,7 +100,8 @@ public class ConversionUtilImpl implements ConversionUtil {
         double ml = pint * 473.17;
         double l = ml / 1000;
         double kl = l / 1000;
-        return "Metric:\nMililiters: " + ml + "\nLitres: " + l + "\nKilolitres: " + kl;
+        return "Metric:\nMililiters: " + Precision.round(ml, 2) + "\nLitres: "
+                + Precision.round(l, 2) + "\nKilolitres: " + Precision.round(kl, 2);
     }
 
     @Override
@@ -100,7 +109,8 @@ public class ConversionUtilImpl implements ConversionUtil {
         double ml = gal * 3785.41;
         double l = ml / 1000;
         double kl = l / 1000;
-        return "Metric:\nMililiters: " + ml + "\nLitres: " + l + "\nKilolitres: " + kl;
+        return "Metric:\nMililiters: " + Precision.round(ml, 2) + "\nLitres: "
+                + Precision.round(l, 2) + "\nKilolitres: " + Precision.round(kl, 2);
     }
 
     @Override
@@ -108,15 +118,17 @@ public class ConversionUtilImpl implements ConversionUtil {
         double ounce = ml / 3785.41;
         double pint = ounce / 16;
         double gal = pint / 8;
-        return "Imperial:\nOunce: " + ounce + "\nPint:" + pint + "\nGallon: " + gal;
+        return "Imperial:\nOunce: " + Precision.round(ounce, 2) + "\nPint: " +
+                Precision.round(pint, 2) + "\nGallon: " + Precision.round(gal, 2);
     }
 
     @Override
     public String litre(double litre) {
-        double ounce = (litre / 3785.41) / 1000;
+        double ounce = litre *33.814;
         double pint = ounce / 16;
         double gal = pint / 8;
-        return "Imperial:\nOunce: " + ounce + "\nPint:" + pint + "\nGallon: " + gal;
+        return "Imperial:\nOunce: " + Precision.round(ounce, 2) + "\nPint: " +
+                Precision.round(pint, 2) + "\nGallon: " + Precision.round(gal, 2);
     }
 
     @Override
@@ -124,7 +136,8 @@ public class ConversionUtilImpl implements ConversionUtil {
         double ounce = kl * 33814;
         double pint = ounce / 16;
         double gal = pint / 8;
-        return "Imperial:\nOunce: " + ounce + "\nPint:" + pint + "\nGallon: " + gal;
+        return "Imperial:\nOunce: " + Precision.round(ounce, 2) + "\nPint: " +
+                Precision.round(pint, 2) + "\nGallon: " + Precision.round(gal, 2);
     }
 
     // Mass:
@@ -133,7 +146,8 @@ public class ConversionUtilImpl implements ConversionUtil {
         Double mg = ounce * 28.3495;
         Double g = mg / 1000;
         Double kg = g / 1000;
-        return "Metric:\nMiligrams: " + mg + "\nGrams: " + g + "\nKilograms: " + kg;
+        return "Metric:\nMiligrams: " + Precision.round(mg, 2) + "\nGrams: " +
+                Precision.round(g, 2) + "\nKilograms: " + Precision.round(kg, 2);
     }
 
     @Override
@@ -141,7 +155,8 @@ public class ConversionUtilImpl implements ConversionUtil {
         Double mg = pound * 453592;
         Double g = mg / 1000;
         Double kg = g / 1000;
-        return "Metric:\nMiligrams: " + mg + "\nGrams: " + g + "\nKilograms: " + kg;
+        return "Metric:\nMiligrams: " + Precision.round(mg, 2) + "\nGrams: " +
+                Precision.round(g, 2) + "\nKilograms: " + Precision.round(kg, 2);
     }
 
     @Override
@@ -150,7 +165,8 @@ public class ConversionUtilImpl implements ConversionUtil {
         Double kg = stone * 6.35029;
         Double mg = kg * 1000000;
         Double g = mg / 1000;
-        return "Metric:\nMiligrams: " + mg + "\nGrams: " + g + "\nKilograms: " + kg;
+        return "Metric:\nMiligrams: " + Precision.round(mg, 2) + "\nGrams: " +
+                Precision.round(g, 2) + "\nKilograms: " + Precision.round(kg, 2);
     }
 
     @Override
@@ -158,7 +174,8 @@ public class ConversionUtilImpl implements ConversionUtil {
         Double pound = ml * 0.0022;
         Double stone = pound / 14;
         Double ounce = pound * 16;
-        return "Imperial:\nOunces: " + ounce + "\nStone: " + stone + "\nPounds: " + pound;
+        return "Imperial:\nOunces: " + Precision.round(ounce, 2) + "\nStone: " +
+                Precision.round(stone, 2) + "\nPounds: " + Precision.round(pound, 2);
     }
 
     @Override
@@ -167,7 +184,8 @@ public class ConversionUtilImpl implements ConversionUtil {
         Double stone = pound / 14;
 
         Double ounce = pound * 16;
-        return "Imperial:\nOunces: " + ounce + "\nStone: " + stone + "\nPounds: " + pound;
+        return "Imperial:\nOunces: " + Precision.round(ounce, 2) + "\nStone: " +
+                Precision.round(stone, 2) + "\nPounds: " + Precision.round(pound, 2);
     }
 
     @Override
@@ -176,7 +194,8 @@ public class ConversionUtilImpl implements ConversionUtil {
         Double stone = pound / 14;
 
         Double ounce = pound * 16;
-        return "Imperial:\nOunces: " + ounce + "\nStone: " + stone + "\nPounds: " + pound;
+        return "Imperial:\nOunces: " + Precision.round(ounce, 2) + "\nStone: " +
+                Precision.round(stone, 2) + "\nPounds: " + Precision.round(pound, 2);
     }
 
     // Area:
@@ -186,7 +205,8 @@ public class ConversionUtilImpl implements ConversionUtil {
         double squareMetre = hectare * 10000;
         double squareKm = hectare / 100;
 
-        return "Imperial:\nSquareMetre: " + squareMetre + "\nHectare: " + hectare + "\nSquare Kilometre: " + squareKm;
+        return "Imperial:\nSquareMetre: " + Precision.round(squareMetre,2) + "\nHectare: " + 
+        Precision.round(hectare,2) + "\nSquare Kilometre: " + Precision.round(squareKm,2);
     }
 
     @Override
@@ -195,7 +215,8 @@ public class ConversionUtilImpl implements ConversionUtil {
         double squareMetre = hectare * 10000;
         double squareKm = hectare / 100;
 
-        return "Imperial:\nSquareMetre: " + squareMetre + "\nHectare: " + hectare + "\nSquare Kilometre: " + squareKm;
+        return "Imperial:\nSquareMetre: " + Precision.round(squareMetre,2) + "\nHectare: " + 
+        Precision.round(hectare,2) + "\nSquare Kilometre: " + Precision.round(squareKm,2);
     }
 
     @Override
@@ -204,7 +225,8 @@ public class ConversionUtilImpl implements ConversionUtil {
         double squareMetre = hectare * 10000;
         double squareKm = hectare / 100;
 
-        return "Imperial:\nSquareMetre: " + squareMetre + "\nHectare: " + hectare + "\nSquare Kilometre: " + squareKm;
+        return "Imperial:\nSquareMetre: " + Precision.round(squareMetre,2) + "\nHectare: " + 
+        Precision.round(hectare,2) + "\nSquare Kilometre: " + Precision.round(squareKm,2);
     }
 
     @Override
@@ -213,7 +235,8 @@ public class ConversionUtilImpl implements ConversionUtil {
         double rood = sf / 10890;
         double acre = rood * 0.25;
 
-        return "Metric:\nSquareFeet: " + sf + "\nRood: " + rood + "\nAcre: " + acre;
+        return "Metric:\nSquareFeet: " + Precision.round(sf,2) + "\nRood: " + 
+        Precision.round(rood,2) + "\nAcre: " + Precision.round(acre,2);
     }
 
     @Override
@@ -222,7 +245,8 @@ public class ConversionUtilImpl implements ConversionUtil {
         double rood = sf / 10890;
         double acre = rood * 0.25;
 
-        return "Metric:\nSquareFeet: " + sf + "\nRood: " + rood + "\nAcre: " + acre;
+        return "Metric:\nSquareFeet: " + Precision.round(sf,2) + "\nRood: " + 
+        Precision.round(rood,2) + "\nAcre: " + Precision.round(acre,2);
     }
 
     @Override
@@ -231,7 +255,8 @@ public class ConversionUtilImpl implements ConversionUtil {
         double sf = acre * 43560;
         double rood = sf / 10890;
 
-        return "Metric:\nSquareFeet: " + sf + "\nRood: " + rood + "\nAcre: " + acre;
+        return "Metric:\nSquareFeet: " + Precision.round(sf,2) + "\nRood: " + 
+        Precision.round(rood,2) + "\nAcre: " + Precision.round(acre,2);
     }
 
 }
