@@ -92,7 +92,7 @@ public class ConversionImpl implements Conversion {
     @Override
     public String litre(double input) {
         // TODO Auto-generated method stub
-        return null;
+        return conversionUtil.litre(input);
     }
 
     @Override
