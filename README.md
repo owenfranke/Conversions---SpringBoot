@@ -10,6 +10,8 @@ The application uses:
 * Maven
 * Postman (for testing) - you can import the json file included
 
+[Postman Collection](https://github.com/facebook/create-react-app)
+
 ### To use the Docker Environment:
 #### `Compile new .jar (if required)`
 'mvn install'
